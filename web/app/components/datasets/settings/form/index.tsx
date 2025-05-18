@@ -8,9 +8,7 @@ import { unstable_serialize } from 'swr/infinite'
 import PermissionSelector from '../permission-selector'
 import IndexMethodRadio from '../index-method-radio'
 import RetrievalSettings from '../../external-knowledge-base/create/RetrievalSettings'
-import { IndexingType } from '../../create/step-two'
 import RetrievalMethodConfig from '@/app/components/datasets/common/retrieval-method-config'
-import EconomicalRetrievalMethodConfig from '@/app/components/datasets/common/economical-retrieval-method-config'
 import { ToastContext } from '@/app/components/base/toast'
 import Button from '@/app/components/base/button'
 import Input from '@/app/components/base/input'
@@ -31,7 +29,6 @@ import type { DefaultModel } from '@/app/components/header/account-setting/model
 import { ModelTypeEnum } from '@/app/components/header/account-setting/model-provider-page/declarations'
 import { fetchMembers } from '@/service/common'
 import type { Member } from '@/models/common'
-import AlertTriangle from '@/app/components/base/icons/src/vender/solid/alertsAndFeedback/AlertTriangle'
 
 const rowClass = 'flex'
 const labelClass = `
@@ -227,13 +224,7 @@ const Form = () => {
                 docForm={currentDataset.doc_form}
                 currentValue={currentDataset.indexing_technique}
               />
-              {currentDataset.indexing_technique === IndexingType.ECONOMICAL && indexMethod === IndexingType.QUALIFIED && <div className='mt-2 flex h-10 items-center gap-x-0.5 overflow-hidden rounded-xl border-[0.5px] border-components-panel-border bg-components-panel-bg-blur p-2 shadow-xs backdrop-blur-[5px]'>
-                <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(92deg,rgba(247,144,9,0.25)_0%,rgba(255,255,255,0.00)_100%)] opacity-40'></div>
-                <div className='p-1'>
-                  <AlertTriangle className='size-4 text-text-warning-secondary' />
-                </div>
-                <span className='system-xs-medium'>{t('datasetSettings.form.upgradeHighQualityTip')}</span>
-              </div>}
+
             </div>
           </div>
         </>
@@ -307,26 +298,13 @@ const Form = () => {
               <div className={labelClass}>
                 <div>
                   <div className='system-sm-semibold text-text-secondary'>{t('datasetSettings.form.retrievalSetting.title')}</div>
-                  <div className='body-xs-regular text-text-tertiary'>
-                    <a target='_blank' rel='noopener noreferrer' href='https://docs.dify.ai/guides/knowledge-base/create-knowledge-and-upload-documents#id-4-retrieval-settings' className='text-text-accent'>{t('datasetSettings.form.retrievalSetting.learnMore')}</a>
-                    {t('datasetSettings.form.retrievalSetting.description')}
-                  </div>
                 </div>
               </div>
               <div className='grow'>
-                {indexMethod === IndexingType.QUALIFIED
-                  ? (
-                    <RetrievalMethodConfig
-                      value={retrievalConfig}
-                      onChange={setRetrievalConfig}
-                    />
-                  )
-                  : (
-                    <EconomicalRetrievalMethodConfig
-                      value={retrievalConfig}
-                      onChange={setRetrievalConfig}
-                    />
-                  )}
+                <RetrievalMethodConfig
+                  value={retrievalConfig}
+                  onChange={setRetrievalConfig}
+                />
               </div>
             </div>
           </>
