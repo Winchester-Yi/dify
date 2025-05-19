@@ -1,0 +1,50 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 工具函数与服务
+
+Dify Web 中的工具函数和服务主要位于 `utils` 和 `service` 目录下。
+
+## 核心工具函数
+
+- `utils/classnames.ts` - 处理 CSS 类名合并
+- `utils/var-basePath.js` - 处理基础路径配置
+- `utils/storage.ts` - 本地存储工具
+
+## API 服务
+
+API 服务位于 `service` 目录下，用于处理与后端的通信：
+
+- `service/knowledge` - 知识库相关 API
+- `service/demo` - 演示相关 API
+
+## Hooks
+
+自定义 React Hooks 位于 `hooks` 目录下：
+
+- 数据获取 hooks
+- 状态管理 hooks
+- UI 相关 hooks
+
+## 类型定义
+
+类型定义位于 `types` 目录下，包括：
+
+- API 响应类型
+- 组件 props 类型
+- 全局类型定义
+
+## 上下文 (Context)
+
+React Context 位于 `context` 目录下，用于状态共享。
+
+## 导入约定
+
+推荐的导入顺序：
+
+1. 外部库
+2. 项目工具函数和服务
+3. 组件
+4. 样式

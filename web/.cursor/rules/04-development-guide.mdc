@@ -1,0 +1,54 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 开发指南
+
+## 项目设置
+
+1. 开发环境要求：
+   - Node.js >= v22.11.x
+   - pnpm v10.x
+
+2. 安装依赖：
+   ```bash
+   pnpm install
+   ```
+
+3. 环境变量配置：
+   - 复制 `.env.example` 到 `.env.local` 并根据需要修改
+
+4. 启动开发服务器：
+   ```bash
+   pnpm run dev
+   ```
+
+## 代码规范
+
+- 使用 TypeScript 进行类型检查
+- 使用 ESLint 进行代码检查
+- 遵循项目中定义的组件风格和命名约定
+- 使用 Tailwind CSS 进行样式设计
+
+## 组件开发
+
+1. 组件应放置在适当的目录中（基础组件放在 `app/components/base`）
+2. 使用 Storybook 开发和测试组件（`pnpm storybook`）
+3. 为组件编写单元测试（Jest 和 React Testing Library）
+
+## 国际化
+
+- 所有用户可见文本应使用国际化资源（i18n）
+- 国际化资源文件位于 `i18n` 目录下
+- 使用 `i18next` 进行国际化
+
+## 测试
+
+- 单元测试文件命名为 `*.spec.ts` 或 `*.spec.tsx`
+- 运行测试：`pnpm run test`
+
+## 构建和部署
+
+- 构建生产版本：`pnpm run build`
+- 启动生产服务器：`pnpm run start`

@@ -1,0 +1,40 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 组件结构
+
+Dify Web 中的组件按照功能和用途组织在 `app/components` 目录下。
+
+## 基础组件
+
+基础组件位于 `app/components/base` 目录，包括通用 UI 元素如按钮、输入框、对话框等：
+
+- `button` - 按钮组件
+- `input` - 输入框组件
+- `dialog` - 对话框组件
+- `dropdown` - 下拉菜单组件
+- `modal` - 模态框组件
+- `textarea` - 文本域组件
+- `toast` - 提示组件
+- `popover` - 弹出框组件
+
+## 应用组件
+
+应用相关组件位于 `app/components/app` 目录，包括：
+
+- `annotation` - 注释相关组件
+- `configuration` - 应用配置组件
+- `create-app-dialog` - 创建应用对话框
+- `log` - 日志组件
+- `overview` - 应用概览组件
+
+## 布局组件
+
+- 头部导航组件: `app/components/header`
+- 侧边栏组件: `app/components/app-sidebar`
+
+## 数据集组件
+
+数据集相关组件位于 `app/components/datasets` 目录下，用于数据集管理和操作。

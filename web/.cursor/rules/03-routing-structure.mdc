@@ -1,0 +1,42 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 路由结构
+
+Dify Web 使用 Next.js App Router 组织路由结构。
+
+## 主要路由
+
+- `/apps` - 应用列表页面 (默认重定向路径)
+- `/app/(commonLayout)/apps` - 应用目录
+- `/app/(commonLayout)/apps/[appId]` - 应用详情页面
+- `/app/(commonLayout)/datasets` - 数据集目录
+- `/app/(commonLayout)/datasets/[datasetId]` - 数据集详情页面
+- `/app/(commonLayout)/explore` - 探索页面
+- `/app/(commonLayout)/plugins` - 插件页面
+- `/app/(commonLayout)/tools` - 工具页面
+
+## 分享路由
+
+- `/app/(shareLayout)/chat/[token]` - 分享聊天
+- `/app/(shareLayout)/chatbot/[token]` - 分享聊天机器人
+- `/app/(shareLayout)/completion/[token]` - 分享完成
+- `/app/(shareLayout)/workflow/[token]` - 分享工作流
+
+## 账户相关路由
+
+- `/app/signin` - 登录页面
+- `/app/account` - 账户页面
+- `/app/forgot-password` - 忘记密码页面
+- `/app/reset-password` - 重置密码页面
+- `/app/activate` - 账户激活页面
+
+## 安装路由
+
+- `/app/install` - 安装页面
+
+## 路由重定向
+
+- `/` 重定向到 `/apps` (在 [next.config.js](mdc:next.config.js) 中配置)

@@ -1,0 +1,43 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 国际化 (i18n) 指南
+
+Dify Web 使用 i18next 进行国际化支持，支持多种语言。
+
+## 语言文件位置
+
+所有的语言资源文件位于 `i18n` 目录下，按语言代码组织：
+
+- `i18n/en-US/` - 英语（美国）资源
+- `i18n/zh-Hans/` - 简体中文资源
+- `i18n/ja-JP/` - 日本语资源
+- `i18n/ko-KR/` - 韩语资源
+- 等其他语言...
+
+## 如何使用
+
+在组件中使用国际化时，导入 `useTranslation` 钩子：
+
+```tsx
+import { useTranslation } from 'react-i18next'
+
+function MyComponent() {
+  const { t } = useTranslation()
+  return <div>{t('key.to.translate')}</div>
+}
+```
+
+## 添加新的翻译
+
+1. 确保翻译键在所有语言资源文件中都有对应的值
+2. 使用工具检查缺失的翻译：`pnpm check-i18n`
+3. 可以使用自动生成工具：`pnpm auto-gen-i18n`
+
+## 翻译命名约定
+
+- 使用嵌套的点表示法进行组织，如 `common.button.submit`
+- 功能相关的翻译应按模块组织，如 `app.settings.title`
+- 共享的通用翻译放在 `common` 命名空间下

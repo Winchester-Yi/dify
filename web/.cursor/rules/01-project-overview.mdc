@@ -1,0 +1,32 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Dify Web 项目概述
+
+Dify Web 是一个基于 Next.js 构建的前端项目，是 Dify AI 应用平台的 Web 界面部分。
+
+## 主要入口点
+
+- 主应用入口: [app/page.tsx](mdc:app/page.tsx)
+- 应用布局: [app/layout.tsx](mdc:app/layout.tsx)
+- Next.js 配置: [next.config.js](mdc:next.config.js)
+
+## 项目结构
+
+- `/app` - Next.js 应用目录，包含页面和布局组件
+- `/app/components` - 共享组件库
+- `/utils` - 工具函数
+- `/service` - API 服务和通信层
+- `/i18n` - 国际化资源文件
+- `/public` - 静态资源文件
+- `/hooks` - React 钩子函数
+- `/context` - React 上下文
+- `/types` - TypeScript 类型定义
+- `/themes` - 主题文件
+
+## 布局结构
+
+- `(commonLayout)` - 通用布局，用于应用主界面
+- `(shareLayout)` - 分享布局，用于分享功能
